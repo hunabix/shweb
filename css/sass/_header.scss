@@ -4,30 +4,91 @@
 
 .header-wrapper {
 	width: 100%;
-	white-space: nowrap;
+	position: fixed;
 	display: block;
-	overflow: hidden;
-	background: #fff;
-	@include transicion();
+	background: $blue;
 	height: $header-height;
-
+	@include transicion();
+	
+	@media (max-width: $desktop-width) {
+		height: auto;
+		position: relative;
+	}
 	&.tiny {
 		height: 60px;
 	}
 }
+.aside {
+	width: 100%;
+	height: 50px;
+	clear: both;
+	overflow: hidden;
+	margin-bottom: .5rem;
+	-ms-transform: scaleY(1); /* IE 9 */
+	-webkit-transform: scaleY(1); /* Chrome, Safari, Opera */
+	transform: scaleY(1);
+	@include transicion();
+	background-color: $blue-dark;
+
+	&.tiny {
+		-ms-transform: scaleY(0); /* IE 9 */
+		-webkit-transform: scaleY(0); /* Chrome, Safari, Opera */
+		transform: scaleY(0);
+		height: 0px;
+	}
+	.aside-content {
+		width: $desktop-width;
+		margin: 0 auto;
+		padding: 5px 0;
+
+		/* Botones Sociales */
+		.social {
+			float: right;
+			padding: 0 1em;	
+
+			@media (max-width: $tablet-width) {
+				width: 100%;
+				clear: both;
+				text-align: center;
+			}
+		}
+		/* Search Form */
+		#searchform {
+			float: right;
+			padding: 0 1em;
+			@include transicion();
+
+			@media (max-width: $tablet-width) {
+				display: none;
+			}
+			
+			div { margin: 0; }
+			label { display: none; }
+		}
+		
+		#s {
+			float: right;
+			@include transicion();
+			width: 90px;
+		}
+		#s:focus {
+			background-color: #f9f9f9;
+			width: 196px;
+		}
+		#searchsubmit {
+			display: none;
+		}
+	}
+}
 
 .header { 
-	position: relative;
 	overflow: hidden; 
-	white-space: nowrap;
 	clear: both;
 	display: block;
 	width: $desktop-width;
 	height: $header-height;
-	background: $header-bg;
 	margin: 0 auto;
 	z-index: 99;
-	position: fixed;
 	left: 0;
 	right: 0;
 	@include transicion();
@@ -40,104 +101,45 @@
 
 	&.tiny {
 		height: 60px;
-		background: #eee;
+		
 	}
 
 	/* Logo */
 	.logo {
-		padding: .5rem 1rem;
+		margin: 5px;
 		display: block;
-		float: left;
-		max-width: 320px;
+		position: absolute;
+		width: 320px;
+		height: 150px;
+		background: #fff;
+		@include transicion();
+		background-image: url(images/logo.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 90%;
+		top: 0;
+		-webkit-box-shadow: 4px 4px 0px 0px rgba(140, 140, 170, 0.25);
+		-moz-box-shadow:    4px 4px 0px 0px rgba(140, 140, 170, 0.25);
+		box-shadow:         4px 4px 0px 0px rgba(140, 140, 170, 0.25);
+		@include rounded(4px);
 
 		@media (max-width: $tablet-width) {
 			max-width: 100%;
 			width: 100%;
-			text-align: center;
-			padding: 1rem 0;
 		}
-		img {
-			max-width: 320px;
-			@include transicion();
-
-			@media (max-width: $tablet-width) {
-				width: 75%;
-			}
-			&.tiny {
-				max-width: 144px;
-			}
+		&.tiny {
+			width: 180px;
+			height: 60px;
+			margin: 2px;		
 		}
-	}
-	/* Botones Sociales */
-	.social {
-		float: right;
-		padding: .5rem 1em;	
-
-		@media (max-width: $tablet-width) {
-			width: 100%;
-			clear: both;
-			text-align: center;
-		}
-	}
-	/* Search Form */
-	#searchform {
-		float: right;
-		padding: .5rem 1em;
-		@include transicion();
-
-		@media (max-width: $tablet-width) {
-			display: none;
-		}
-		
-		div { margin: 0; }
-		label { display: none; }
-	}
+	}	
 	
-	 #s {
-		float: right;
-		@include transicion();
-		width: 90px;
-	}
-	#s:focus {
-		background-color: #f9f9f9;
-		width: 196px;
-	}
-	#searchsubmit {
-		display: none;
-	}
-	.only-search #searchform {
-		top: 5px;
-		z-index: 1;
-	}
-	.only-search #s {
-		background-color: #666;
-		border-color: #000;
-		color: #222;
-	}
-	.only-search #s,
-	.only-search #s:focus {
-		width: 85%;
-	}
-	.only-search #s:focus {
-		background-color: #bbb;
-	}
-	.with-image #searchform {
-		top: auto;
-		bottom: -27px;
-		max-width: 195px;
-	}
-	.only-search + #access div {
-		padding-right: 205px;
-	}
 	/* Main Navigation */		
 	.main-nav {
 		display: block;
 		float: right;
 		margin: .5rem 1% 0;
 		max-width: 66%;
-		position: absolute;
-		right: 0;
-		top: 4rem;
 		@include transicion();
 		
 		@media (max-width: $tablet-width) {
@@ -147,10 +149,9 @@
 			display:inline-block;
 			top: 0;
 		}
-		
 		/* Clase que se le agrega al nav cuando se hace scroll */
 		&.tiny { 
-		  top: .5rem;
+			
 		}
 		/* Clase del botón del menú que se muestra en pantallas pequeñas */
 		.toggle-nav {

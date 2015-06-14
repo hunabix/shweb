@@ -6,9 +6,8 @@ jQuery(document).ready(function($) {
 	$(window).on("scroll touchmove", function () {
 		$('#header-wrapper').toggleClass('tiny', $(document).scrollTop() > 0);
 		$('#header').toggleClass('tiny', $(document).scrollTop() > 0);
-		$('#header-logo img').toggleClass('tiny', $(document).scrollTop() > 0);
-		$('#header-social').toggleClass('u-remove', $(document).scrollTop() > 0);
-		$('#header #searchform').toggleClass('u-remove', $(document).scrollTop() > 0);
+		$('#header-logo').toggleClass('tiny', $(document).scrollTop() > 0);
+		$('#header-aside').toggleClass('tiny', $(document).scrollTop() > 0);	
 		$('#header-main-nav').toggleClass('tiny', $(document).scrollTop() > 0);	
 	});
 	

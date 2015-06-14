@@ -43,7 +43,7 @@
 <link href="<?php plantilla_url(); ?>/inc/font-awesome/css/font-awesome.css" rel="stylesheet">
 <!-- Favicons
   ================================================== -->
-<link href=" <?php print_ot('favicon', get_plantilla_url().'/images/favicon.png'); ?>" rel="icon" type="image/x-icon" />
+<link href="<?php plantilla_url(); ?>/images/favicon.ico" rel="icon" type="image/x-icon" />
 <!-- pingback
   ================================================== -->
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -57,37 +57,36 @@
 
 <body <?php body_class(); ?>>
 
-<div class="header-wrapper">
-    <header id="header" class="header" role="banner" >
-                
-            <!-- Logo -->
-            <a href="<?php inicio_url(); ?>" id="header-logo" class="logo animated flipInX">
-                <img src="<?php print_ot('logo', get_plantilla_url().'/images/logo.png'); ?>" alt="<?php bloginfo('name'); ?>">
-            </a>
-            
+<div id="header-wrapper" class="header-wrapper">
+
+    <aside id="header-aside" class="aside">
+        <div class="aside-content">
+            <!-- Formulario de búsqueda -->
+            <?php get_search_form(); ?>
+
             <!-- Redes sociales -->
             <div id="header-social" class="social">
                 <!-- Facebook -->
-                <?php if (get_ot('fb_url') != '') { ?>
-                    <a href="<?php print_ot('fb_url', ''); ?>" title="Facebook" target="_blank"><i class="fa fa-facebook-square fa-3x"></i></a>
-                <?php }  ?>
+                <a href="https://www.facebook.com/SolucionesHipermedia" title="Facebook" target="_blank">
+                    <i class="fa fa-facebook fa-3x"></i>
+                </a>
                 <!-- Twitter -->
-                <?php if (get_ot('tw_url') != '') { ?>
-                    <a href="<?php print_ot('tw_url', ''); ?>"title="Twitter" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a>
-                <?php }  ?>
-                <!-- Youtube -->
-                <?php if (get_ot('yt_url') != '') { ?>
-                    <a href="<?php print_ot('yt_url', ''); ?>" title="Youtube" target="_blank"><i class="fa fa-youtube-square fa-3x"></i></a>
-                <?php }  ?>
+                <a href="https://twitter.com/hunabix" title="Twitter" target="_blank">
+                    <i class="fa fa-twitter fa-3x"></i>
+                </a>
                 <!-- Google Plus -->
-                <?php if (get_ot('gp_url') != '') { ?>
-                    <a href="<?php print_ot('gp_url', ''); ?>" title="Google Plus" target="_blank"><i class="fa fa-google-plus-square fa-3x"></i></a>
-                <?php }  ?>      
+                <a href="https://plus.google.com/u/1/b/116321567159771228884/+Solucioneshipermediadesarrolloweb/posts" title="Google Plus" target="_blank">
+                    <i class="fa fa-google-plus fa-3x"></i>
+                </a>
             </div><!-- #social -->
-            
-            <!-- Formulario de búsqueda -->
-            <?php get_search_form(); ?>
-            
+        </div>
+    </aside>
+
+    <header id="header" class="header" role="banner" >
+                
+            <!-- Logo -->
+            <a href="<?php inicio_url(); ?>" id="header-logo" class="logo animated flipInX"></a>
+
             <!-- Menú principal -->        
             <nav id="header-main-nav" class="main-nav" role="navigation">
                 <!-- Icono de menú para versión adaptativa -->
