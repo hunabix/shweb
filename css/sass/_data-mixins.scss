@@ -75,6 +75,18 @@ $smaller-width: 500px;
 	display: inline-block;
 }
 
+@mixin white-bg {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+50,f9f9f9+50,f9f9f9+100 */
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(left,  #ffffff 0%, #ffffff 50%, #f9f9f9 50%, #f9f9f9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(50%,#ffffff), color-stop(50%,#f9f9f9), color-stop(100%,#f9f9f9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #ffffff 0%,#ffffff 50%,#f9f9f9 50%,#f9f9f9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #ffffff 0%,#ffffff 50%,#f9f9f9 50%,#f9f9f9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #ffffff 0%,#ffffff 50%,#f9f9f9 50%,#f9f9f9 100%); /* IE10+ */
+	background: linear-gradient(to right,  #ffffff 0%,#ffffff 50%,#f9f9f9 50%,#f9f9f9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9f9f9',GradientType=1 ); /* IE6-9 */
+}
+
 @mixin fb-bg {
 	background: rgb(75,102,160); /* Old browsers */
 	background: -moz-linear-gradient(left,  rgba(75,102,160,1) 1%, rgba(75,102,160,1) 49%, rgba(53,88,153,1) 49%, rgba(53,88,153,1) 99%); /* FF3.6+ */

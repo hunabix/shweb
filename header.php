@@ -85,17 +85,16 @@
     <header id="header" class="header" role="banner" >
                 
             <!-- Logo -->
-            <a href="<?php inicio_url(); ?>" id="header-logo" class="logo animated flipInX"></a>
+            <div id="header-logo" class="logo animated flipInX">
+                <a href="<?php inicio_url(); ?>" class="logo-img"></a>
+            </div>
 
             <!-- Menú principal -->        
             <nav id="header-main-nav" class="main-nav" role="navigation">
-                <!-- Icono de menú para versión adaptativa -->
-                <a class="toggle-nav" href="#">MENU DE NAVEGACIÓN</a>
-                <!-- Menu WordPress -->
-                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'menu_class' => 'activo', 'menu_id' => 'header-menu') ); ?>
+               
             </nav>
 
     </header>
 </div>
 
-<main class="content-wrapper">
+<main>
